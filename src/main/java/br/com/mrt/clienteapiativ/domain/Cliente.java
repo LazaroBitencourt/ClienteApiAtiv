@@ -1,5 +1,6 @@
 package br.com.mrt.clienteapiativ.domain;
 
+import br.com.mrt.clienteapiativ.application.api.ClienteResquest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -41,5 +42,17 @@ public class Cliente {
     private LocalDate dataNascimento;
     private LocalDateTime dataCasdastro;
     private LocalDateTime dataHoraAtualizacao;
+
+    public Cliente(ClienteResquest clienteResquest){
+
+        this.nome = clienteResquest.getNome();
+        this.celular = clienteResquest.getCelular();
+        this.telefone = clienteResquest.getTelefone();
+        this.email = clienteResquest.getEmail();
+        this.cpf = clienteResquest.getCpf();
+        this.sexo = clienteResquest.getSexo();
+        this.dataNascimento = clienteResquest.getDataNascimento();
+        this.dataCasdastro = LocalDateTime.now();
+    }
 }
 
