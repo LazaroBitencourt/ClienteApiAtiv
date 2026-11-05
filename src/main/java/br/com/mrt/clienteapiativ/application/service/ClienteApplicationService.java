@@ -2,6 +2,7 @@ package br.com.mrt.clienteapiativ.application.service;
 
 import br.com.mrt.clienteapiativ.application.api.ClienteIdResponse;
 import br.com.mrt.clienteapiativ.application.api.ClienteResquest;
+import br.com.mrt.clienteapiativ.domain.Cliente;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,8 @@ public class ClienteApplicationService implements ClienteService {
     @Override
     public ClienteIdResponse cadastraNovoCliente(ClienteResquest clienteResquest) {
         log.info("[inicia] cadastraNovoCliente - ClienteApplicationService");
-
+        Cliente cliente = clienteRepository.sava(new Cliente(clienteResquest));
         log.info("[finaliza] cadastraNovoCliente - ClienteApplicationService");
-        return null;
+        return ClienteIdResponse.builder(cliente.getIdCliente()).build();
     }
 }

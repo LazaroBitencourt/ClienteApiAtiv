@@ -17,6 +17,6 @@ public class ClienteRestcontroller implements ClienteApi{
         log.info("[inicia] postCadastraNovoCliente - ClienteRestcontroller");
         ClienteIdResponse idCliente = clienteService.cadastraNovoCliente(clienteResquest);
         log.info("[finaliza] postCadastraNovoCliente - ClienteRestcontroller");
-        return null;
+        return idCliente;
     }
 }
