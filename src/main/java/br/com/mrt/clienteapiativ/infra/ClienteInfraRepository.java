@@ -18,6 +18,6 @@ public class ClienteInfraRepository implements ClienteRepository  {
         log.info("[inicia] ClienteInfraRepository - salva");
         Cliente salvaCliente = jpaRepository.save(cliente);
         log.info("[finaliza] ClienteInfraRepository - salva");
-        return null;
+        return salvaCliente;
     }
 }
