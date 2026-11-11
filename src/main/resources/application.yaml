@@ -1,3 +1,6 @@
+server:
+  servlet:
+    context-path: /mrtech/v1
 spring:
   application:
     name: clienteApiAtiv
