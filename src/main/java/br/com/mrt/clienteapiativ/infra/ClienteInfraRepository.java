@@ -26,6 +26,7 @@ public class ClienteInfraRepository implements ClienteRepository  {
     @Override
     public Cliente buscaClientePorId(UUID idCliente) {
         log.info("[inicia] ClienteInfraRepository - buscaClientePorId");
+        Cliente cliente = jpaRepository.findById(idCliente).orElseThrow();
         log.info("[finaliza] ClienteInfraRepository - buscaClientePorId");
         return null;
     }
