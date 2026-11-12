@@ -25,7 +25,7 @@ public class ClienteRestcontroller implements ClienteApi{
     @Override
     public ClienteDetalhadoResponse getBuscaClientePorId(UUID idCliente) {
         log.info("[inicia] ClienteRestcontroller - getBuscaClientePorId");
-
+        ClienteDetalhadoResponse cliente = clienteService.buscarClientePorId(idCliente);
         log.info("[finaliza] ClienteRestcontroller - getBuscaClientePorId");
         return null;
     }
