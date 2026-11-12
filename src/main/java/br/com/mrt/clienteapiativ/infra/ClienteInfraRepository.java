@@ -28,6 +28,6 @@ public class ClienteInfraRepository implements ClienteRepository  {
         log.info("[inicia] ClienteInfraRepository - buscaClientePorId");
         Cliente cliente = jpaRepository.findById(idCliente).orElseThrow();
         log.info("[finaliza] ClienteInfraRepository - buscaClientePorId");
-        return null;
+        return cliente;
     }
 }

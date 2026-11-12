@@ -27,6 +27,6 @@ public class ClienteRestcontroller implements ClienteApi{
         log.info("[inicia] ClienteRestcontroller - getBuscaClientePorId");
         ClienteDetalhadoResponse cliente = clienteService.buscarClientePorId(idCliente);
         log.info("[finaliza] ClienteRestcontroller - getBuscaClientePorId");
-        return null;
+        return cliente;
     }
 }

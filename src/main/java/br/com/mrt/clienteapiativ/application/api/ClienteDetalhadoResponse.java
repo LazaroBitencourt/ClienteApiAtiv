@@ -1,12 +1,9 @@
 package br.com.mrt.clienteapiativ.application.api;
 
+import br.com.mrt.clienteapiativ.domain.Cliente;
 import br.com.mrt.clienteapiativ.domain.Sexo;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-import org.hibernate.validator.constraints.br.CPF;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -24,4 +21,17 @@ public class ClienteDetalhadoResponse {
     private LocalDate dataNascimento;
     private LocalDateTime dataCasdastro;
     private LocalDateTime dataHoraAtualizacao;
+
+    public ClienteDetalhadoResponse(Cliente cliente) {
+        this.idCliente = cliente.getIdCliente();
+        this.nome = cliente.getNome();
+        this.celular = cliente.getCelular();
+        this.telefone = cliente.getTelefone();
+        this.email = cliente.getEmail();
+        this.cpf = cliente.getCpf();
+        this.sexo = cliente.getSexo();
+        this.dataNascimento = cliente.getDataNascimento();
+        this.dataCasdastro = cliente.getDataCasdastro();
+        this.dataHoraAtualizacao = cliente.getDataHoraAtualizacao();
+    }
 }
