@@ -34,8 +34,8 @@ public class ClienteRestcontroller implements ClienteApi{
     @Override
     public List<ClienteListResponse> getListaTodosClientes() {
         log.info("[inicia] ClienteRestcontroller - getListaTodosClientes");
-
-        git log.info("[finaliza] ClienteRestcontroller - getListaTodosClientes");
+        List<ClienteListResponse> clientes = clienteService.listaTodosClientes();
+        log.info("[finaliza] ClienteRestcontroller - getListaTodosClientes");
         return List.of();
     }
 
