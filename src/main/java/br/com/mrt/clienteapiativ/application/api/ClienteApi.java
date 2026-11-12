@@ -1,8 +1,10 @@
 package br.com.mrt.clienteapiativ.application.api;
 
+import br.com.mrt.clienteapiativ.domain.Cliente;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RequestMapping("/cliente")
@@ -16,5 +18,7 @@ public interface ClienteApi {
     @ResponseStatus(code = HttpStatus.OK)
     public ClienteDetalhadoResponse getBuscaClientePorId(@PathVariable("idCliente") UUID idCliente);
 
-
+    @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
+    public List<ClienteListResponse> GetListaTodosClientes();
 }
