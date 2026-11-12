@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.UUID;
 
 @Repository
@@ -29,5 +30,12 @@ public class ClienteInfraRepository implements ClienteRepository  {
         Cliente cliente = jpaRepository.findById(idCliente).orElseThrow();
         log.info("[finaliza] ClienteInfraRepository - buscaClientePorId");
         return cliente;
+    }
+
+    @Override
+    public List<Cliente> buscaTodosClientes() {
+        log.info("[inicia] ClienteInfraRepository - buscaTodosClientes");
+        log.info("[finaliza] ClienteInfraRepository - buscaTodosClientes");
+        return List.of();
     }
 }
