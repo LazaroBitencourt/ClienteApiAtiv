@@ -36,7 +36,7 @@ public class ClienteRestcontroller implements ClienteApi{
         log.info("[inicia] ClienteRestcontroller - getListaTodosClientes");
         List<ClienteListResponse> clientes = clienteService.listaTodosClientes();
         log.info("[finaliza] ClienteRestcontroller - getListaTodosClientes");
-        return List.of();
+        return clientes;
     }
 
 }
