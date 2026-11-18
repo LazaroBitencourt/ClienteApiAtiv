@@ -39,4 +39,10 @@ public class ClienteRestcontroller implements ClienteApi{
         return clientes;
     }
 
+    @Override
+    public void patchAlteraClientePorId(UUID idCliente, ClienteAlteradoRequest clienteAlteradoRequest) {
+        log.info("[inicia] ClienteRestcontroller - patchAlteraClientePorId");
+        log.info("[finaliza] ClienteRestcontroller - patchAlteraClientePorId");
+    }
+
 }
