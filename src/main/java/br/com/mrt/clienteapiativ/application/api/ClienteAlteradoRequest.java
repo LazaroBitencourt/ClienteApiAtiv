@@ -3,7 +3,6 @@ import br.com.mrt.clienteapiativ.domain.Sexo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Value;
-import org.hibernate.annotations.BatchSize;
 
 @Value
 @Builder
