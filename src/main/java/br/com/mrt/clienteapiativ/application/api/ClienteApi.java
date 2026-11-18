@@ -1,6 +1,7 @@
 package br.com.mrt.clienteapiativ.application.api;
 
 import br.com.mrt.clienteapiativ.domain.Cliente;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,4 +22,8 @@ public interface ClienteApi {
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     public List<ClienteListResponse> getListaTodosClientes();
+
+    @PatchMapping("/{idCliente}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    public void patchAlteraClientePorId(@PathVariable("idCliente") UUID idCliente, @Valid @RequestBody ClienteAlteradoRequest clienteAlteradoRequest);
 }

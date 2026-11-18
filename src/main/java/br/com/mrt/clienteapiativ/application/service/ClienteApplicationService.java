@@ -1,9 +1,6 @@
 package br.com.mrt.clienteapiativ.application.service;
 
-import br.com.mrt.clienteapiativ.application.api.ClienteDetalhadoResponse;
-import br.com.mrt.clienteapiativ.application.api.ClienteIdResponse;
-import br.com.mrt.clienteapiativ.application.api.ClienteListResponse;
-import br.com.mrt.clienteapiativ.application.api.ClienteResquest;
+import br.com.mrt.clienteapiativ.application.api.*;
 import br.com.mrt.clienteapiativ.application.repository.ClienteRepository;
 import br.com.mrt.clienteapiativ.domain.Cliente;
 import lombok.AllArgsConstructor;
@@ -42,5 +39,14 @@ public class ClienteApplicationService implements ClienteService {
         List<Cliente> clientes = clienteRepository.buscaTodosClientes();
         log.info("[finaliza] ClienteApplicationService - listaTodosClientes");
         return ClienteListResponse.converte(clientes);
+    }
+
+    @Override
+    public void alteraClientePorId(UUID idCliente, ClienteAlteradoRequest clienteAlteradoRequest) {
+        log.info("[inicia] ClienteApplicationService - alteraClientePorId");
+        Cliente cliente = clienteRepository.buscaClientePorId(idCliente);
+        cliente.atualizaDadosCliente(clienteAlteradoRequest);
+        clienteRepository.salva(cliente);
+        log.info("[finaliza] ClienteApplicationService - alteraClientePorId");
     }
 }

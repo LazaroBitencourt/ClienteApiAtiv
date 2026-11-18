@@ -1,5 +1,6 @@
 package br.com.mrt.clienteapiativ.domain;
 
+import br.com.mrt.clienteapiativ.application.api.ClienteAlteradoRequest;
 import br.com.mrt.clienteapiativ.application.api.ClienteResquest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -53,6 +54,13 @@ public class Cliente {
         this.sexo = clienteResquest.getSexo();
         this.dataNascimento = clienteResquest.getDataNascimento();
         this.dataCasdastro = LocalDateTime.now();
+    }
+
+    public void atualizaDadosCliente(ClienteAlteradoRequest clienteAlteradoRequest){
+        this.celular = clienteAlteradoRequest.getCelular();
+        this.telefone = clienteAlteradoRequest.getTelefone();
+        this.email = clienteAlteradoRequest.getEmail();
+        this.sexo = clienteAlteradoRequest.getSexo();
     }
 }
 
