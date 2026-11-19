@@ -46,4 +46,10 @@ public class ClienteRestcontroller implements ClienteApi{
         log.info("[finaliza] ClienteRestcontroller - patchAlteraClientePorId");
     }
 
+    @Override
+    public void deleteClientePorId(UUID idCliente) {
+        log.info("[inicia] ClienteRestcontroller - deleteClientePorId");
+        log.info("[finaliza] ClienteRestcontroller - deleteClientePorId");
+    }
+
 }
