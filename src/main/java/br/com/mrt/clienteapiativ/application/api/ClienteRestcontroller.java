@@ -56,6 +56,7 @@ public class ClienteRestcontroller implements ClienteApi{
     @Override
     public ClienteListPaginaResponse getListaClientesPaginados(int pagina, int itens) {
         log.info("[inicia] ClienteRestcontroller - getListaClientesPaginados");
+        ClienteListPaginaResponse listaClientes = clienteService.listaClientesPaginados(pagina, itens);
         log.info("[finaliza] ClienteRestcontroller - getListaClientesPaginados");
         return null;
     }
