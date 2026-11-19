@@ -14,4 +14,6 @@ public interface ClienteService {
     List<ClienteListResponse> listaTodosClientes();
 
     void alteraClientePorId(UUID idCliente, ClienteAlteradoRequest clienteAlteradoRequest);
+
+    void deletaClientePorId(UUID idCliente);
 }

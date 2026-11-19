@@ -49,4 +49,10 @@ public class ClienteApplicationService implements ClienteService {
         clienteRepository.salva(cliente);
         log.info("[finaliza] ClienteApplicationService - alteraClientePorId");
     }
+
+    @Override
+    public void deletaClientePorId(UUID idCliente) {
+        log.info("[inicia] ClienteApplicationService - deletaClientePorId");
+        log.info("[finaliza] ClienteApplicationService - deletaClientePorId");
+    }
 }
