@@ -55,7 +55,7 @@ public class ClienteInfraRepository implements ClienteRepository  {
         log.info("[inicia] ClienteInfraRepository - buscaClientesPaginados");
         Page<Cliente> clientePage = jpaRepository.findAll(pageRequest);
         log.info("[finaliza] ClienteInfraRepository - buscaClientesPaginados");
-        return null;
+        return clientePage;
     }
 
 
