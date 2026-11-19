@@ -31,7 +31,7 @@ public interface ClienteApi {
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void deleteClientePorId(@PathVariable("idCliente") UUID idCliente);
 
-    @GetMapping()
+    @GetMapping(params = {"pagina","itens"})
     @ResponseStatus(code = HttpStatus.OK)
     public ClienteListPaginaResponse getListaClientesPaginados(@RequestParam(defaultValue = "0") int pagina, @RequestParam(defaultValue = "5") int itens);
 }
