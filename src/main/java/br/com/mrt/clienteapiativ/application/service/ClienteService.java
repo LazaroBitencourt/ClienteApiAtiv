@@ -17,5 +17,5 @@ public interface ClienteService {
 
     void deletaClientePorId(UUID idCliente);
 
-    ClienteListPaginaResponse listaClientesPaginados(int pagina, int itens);
+    List<ClienteListPaginaResponse> listaClientesPaginados(int pagina, int itens);
 }
