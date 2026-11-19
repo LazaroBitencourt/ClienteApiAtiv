@@ -60,6 +60,7 @@ public class ClienteApplicationService implements ClienteService {
     @Override
     public ClienteListPaginaResponse listaClientesPaginados(int pagina, int itens) {
         log.info("[inicia] ClienteApplicationService - listaClientesPaginados");
+        List<Cliente> clientes = clienteRepository.buscaListaClientesPaginados(pagina,itens);
         log.info("[finaliza] ClienteApplicationService - listaClientesPaginados");
         return null;
     }
