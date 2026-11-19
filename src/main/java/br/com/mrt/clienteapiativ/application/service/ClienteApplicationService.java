@@ -56,4 +56,11 @@ public class ClienteApplicationService implements ClienteService {
         clienteRepository.deletaClientePorId(idCliente);
         log.info("[finaliza] ClienteApplicationService - deletaClientePorId");
     }
+
+    @Override
+    public ClienteListPaginaResponse listaClientesPaginados(int pagina, int itens) {
+        log.info("[inicia] ClienteApplicationService - listaClientesPaginados");
+        log.info("[finaliza] ClienteApplicationService - listaClientesPaginados");
+        return null;
+    }
 }

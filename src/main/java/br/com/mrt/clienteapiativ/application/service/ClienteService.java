@@ -16,4 +16,6 @@ public interface ClienteService {
     void alteraClientePorId(UUID idCliente, ClienteAlteradoRequest clienteAlteradoRequest);
 
     void deletaClientePorId(UUID idCliente);
+
+    ClienteListPaginaResponse listaClientesPaginados(int pagina, int itens);
 }
