@@ -5,6 +5,9 @@ import br.com.mrt.clienteapiativ.application.repository.ClienteRepository;
 import br.com.mrt.clienteapiativ.domain.Cliente;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -55,5 +58,13 @@ public class ClienteApplicationService implements ClienteService {
         log.info("[inicia] ClienteApplicationService - deletaClientePorId");
         clienteRepository.deletaClientePorId(idCliente);
         log.info("[finaliza] ClienteApplicationService - deletaClientePorId");
+    }
+
+    @Override
+    public List<ClienteListPaginaResponse> listaClientesPaginados(int pagina, int itens) {
+        log.info("[inicia] ClienteApplicationService - listaClientesPaginados");
+        Page<Cliente> paginaClientes = clienteRepository.buscaClientesPaginados(PageRequest.of(pagina,itens));
+        log.info("[finaliza] ClienteApplicationService - listaClientesPaginados");
+        return ClienteListPaginaResponse.converte(paginaClientes);
     }
 }

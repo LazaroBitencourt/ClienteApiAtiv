@@ -53,4 +53,12 @@ public class ClienteRestcontroller implements ClienteApi{
         log.info("[finaliza] ClienteRestcontroller - deleteClientePorId");
     }
 
+    @Override
+    public List<ClienteListPaginaResponse> getListaClientesPaginados(int pagina, int itens) {
+        log.info("[inicia] ClienteRestcontroller - getListaClientesPaginados");
+        List<ClienteListPaginaResponse> clientes = clienteService.listaClientesPaginados(pagina, itens);
+        log.info("[finaliza] ClienteRestcontroller - getListaClientesPaginados");
+        return clientes;
+    }
+
 }
