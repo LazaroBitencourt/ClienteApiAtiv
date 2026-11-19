@@ -33,5 +33,6 @@ public interface ClienteApi {
 
     @GetMapping(params = {"pagina","itens"})
     @ResponseStatus(code = HttpStatus.OK)
-    public List<ClienteListPaginaResponse> getListaClientesPaginados(@RequestParam(defaultValue = "0") int pagina, @RequestParam(defaultValue = "5") int itens);
+    public List<ClienteListPaginaResponse> getListaClientesPaginados(@RequestParam(defaultValue = "0") int pagina,
+                                                                     @RequestParam(defaultValue = "5") int itens);
 }
