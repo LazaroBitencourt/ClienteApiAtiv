@@ -2,6 +2,7 @@ package br.com.mrt.clienteapiativ.application.repository;
 
 import br.com.mrt.clienteapiativ.domain.Cliente;
 
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,4 +14,6 @@ public interface ClienteRepository {
     List<Cliente> buscaTodosClientes();
 
     void deletaClientePorId(UUID idCliente);
+
+
 }
