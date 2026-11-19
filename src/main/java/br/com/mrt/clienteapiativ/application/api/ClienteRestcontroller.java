@@ -58,7 +58,7 @@ public class ClienteRestcontroller implements ClienteApi{
         log.info("[inicia] ClienteRestcontroller - getListaClientesPaginados");
         List<ClienteListPaginaResponse> clientes = clienteService.listaClientesPaginados(pagina, itens);
         log.info("[finaliza] ClienteRestcontroller - getListaClientesPaginados");
-        return null;
+        return clientes;
     }
 
 }
