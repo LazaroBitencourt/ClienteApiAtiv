@@ -1,6 +1,8 @@
 package br.com.mrt.clienteapiativ.application.repository;
 
 import br.com.mrt.clienteapiativ.domain.Cliente;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import java.awt.print.Pageable;
 import java.util.List;
@@ -15,5 +17,5 @@ public interface ClienteRepository {
 
     void deletaClientePorId(UUID idCliente);
 
-
+    Page<Cliente> buscaClientesPaginados(PageRequest of);
 }

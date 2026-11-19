@@ -51,10 +51,12 @@ public class ClienteInfraRepository implements ClienteRepository  {
     }
 
     @Override
-    public List<Cliente> buscaListaClientesPaginados(Pageable pageable) {
-        log.info("[inicia] ClienteInfraRepository - buscaListaClientesPaginados");
-        Page<Cliente> ClientesPage = jpaRepository.findAll(pageable);
-        log.info("[finaliza] ClienteInfraRepository - buscaListaClientesPaginados");
-        return List.of();
+    public Page<Cliente> buscaClientesPaginados(PageRequest of) {
+        log.info("[inicia] ClienteInfraRepository - buscaClientesPaginados");
+
+        log.info("[finaliza] ClienteInfraRepository - buscaClientesPaginados");
+        return null;
     }
+
+
 }
