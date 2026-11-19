@@ -51,9 +51,9 @@ public class ClienteInfraRepository implements ClienteRepository  {
     }
 
     @Override
-    public Page<Cliente> buscaClientesPaginados(PageRequest of) {
+    public Page<Cliente> buscaClientesPaginados(PageRequest pageRequest) {
         log.info("[inicia] ClienteInfraRepository - buscaClientesPaginados");
-
+        Page<Cliente> clientePage = jpaRepository.findAll(pageRequest);
         log.info("[finaliza] ClienteInfraRepository - buscaClientesPaginados");
         return null;
     }
